@@ -5,6 +5,12 @@
              version="2.1">
     <persistence-unit name="myManager" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>entity.Exam</class>
+        <class>entity.ExamResult</class>
+        <class>entity.Student</class>
+        <class>entity.StudentResult</class>
+        <class>entity.Teacher</class>
+        <class>entity.TrainingCourse</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/students?useSSL=false&amp;useTimezone=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Europe/Minsk" />

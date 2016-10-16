@@ -16,7 +16,7 @@ public class TrainingCourse implements Serializable{
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(referencedColumnName = "id", name = "teacher_id", nullable = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "teacher_fk"), referencedColumnName = "id", name = "teacher_id", nullable = false)
     private Teacher teacher;
 
     @OneToMany(mappedBy = "trainingCourse", cascade = CascadeType.ALL)

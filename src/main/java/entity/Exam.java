@@ -14,16 +14,15 @@ public class Exam implements Serializable {
     private Integer id;
 
     @Column(nullable = false)
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Calendar date;
 
     @ManyToOne(fetch = FetchType.LAZY)
-
-    @JoinColumn(referencedColumnName = "id", name = "teacher_id", nullable = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "exam_teacher_fk"), referencedColumnName = "id", name = "teacher_id", nullable = false)
     private Teacher teacher;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(referencedColumnName = "id", name = "training_course_id", nullable = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "exam_training_course_fk"), referencedColumnName = "id", name = "training_course_id", nullable = false)
     private TrainingCourse trainingCourse;
 
     @OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)

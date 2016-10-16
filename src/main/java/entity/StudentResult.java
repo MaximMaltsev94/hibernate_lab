@@ -11,10 +11,10 @@ public class StudentResult {
     private StudentResultKey id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "exam_id", referencedColumnName = "id", nullable = true)
+    @JoinColumn(foreignKey = @ForeignKey(name = "student_result_exam_fk"), name = "exam_id", referencedColumnName = "id", nullable = true)
     private Exam exam;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TINYINT")
     private Integer result;
 
     @Column(nullable = false)

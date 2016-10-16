@@ -9,7 +9,6 @@ public class Main {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        // TODO: 16.10.2016 add foreign key name to all @ManyToOne annotations
         tx.commit();
         em.close();
         emf.close();

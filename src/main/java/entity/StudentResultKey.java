@@ -7,11 +7,11 @@ import java.io.Serializable;
 @Embeddable
 public class StudentResultKey implements Serializable {
     @ManyToOne
-    @JoinColumn(name = "student_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "student_result_student_id"),name = "student_id", referencedColumnName = "id", nullable = false)
     private Student student;
 
     @ManyToOne
-    @JoinColumn(name = "training_course_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "student_result_training_course"), name = "training_course_id", referencedColumnName = "id", nullable = false)
     private TrainingCourse trainingCourse;
 
     public StudentResultKey() {
