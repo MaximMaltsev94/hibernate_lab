@@ -66,4 +66,13 @@ public class StudentResult {
     public void setNote(String note) {
         this.note = note;
     }
+
+    public void print() {
+        System.out.println("----------------------------------\\");
+        System.out.println("student id = " + id.getStudent().getId());
+        System.out.println("training course id = " + id.getTrainingCourse().getId());
+        System.out.println("result = " + getResult());
+        System.out.println("date = " + getDate().getTime());
+        System.out.println("----------------------------------/");
+    }
 }

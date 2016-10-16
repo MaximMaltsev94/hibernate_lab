@@ -9,7 +9,7 @@ import java.util.Set;
 @Table(name = "student")
 public class Student implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Integer id;
 
@@ -110,5 +110,16 @@ public class Student implements Serializable {
 
     public void setStudentResults(Set<StudentResult> studentResults) {
         this.studentResults = studentResults;
+    }
+
+    public void print() {
+        System.out.println("----------------------------------\\");
+        System.out.println("id = " + getId());
+        System.out.println("first name = " + getFirstName());
+        System.out.println("last name = " + getLastName());
+        System.out.println("birth date = " + getBirthDate().getTime());
+        System.out.println("sex = " + getSex());
+        System.out.println("hostel live = " + getHostelLive());
+        System.out.println("----------------------------------/");
     }
 }
